@@ -1,1 +1,1 @@
-# Learning_Test
+I'm learning django now. I'm trying to challange my learning.
