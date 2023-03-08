@@ -7,10 +7,12 @@ STATUS_CHOICES = (
 
 
 class Post(models.Model):
-    title=models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     text = models.TextField(max_length=1000)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     status = models.CharField(choices=STATUS_CHOICES, max_length=3)
+    datetime_create = models.DateTimeField(auto_now_add=True)
+    datetime_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

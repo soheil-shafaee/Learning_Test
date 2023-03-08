@@ -4,5 +4,5 @@ from .models import Post
 
 @admin.register(Post)
 class AdminPost(admin.ModelAdmin):
-    list_display = ("text", "status")
+    list_display = ("title", "status", "datetime_modified")
     ordering = ("-status", )
