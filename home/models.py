@@ -5,7 +5,8 @@ STATUS_CHOICES = (
     ("drf", "draft"))
 
 
-class Price(models.Model):
+class Post(models.Model):
     text = models.CharField(max_length=100)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     status = STATUS_CHOICES
+
