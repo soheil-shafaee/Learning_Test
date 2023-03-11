@@ -5,19 +5,20 @@ from django.shortcuts import reverse
 
 
 class BlogPostTest(TestCase):
-    def setUp(self):
-        self.user = User.objects.create(username="user1")
-        self.post1 = Post.objects.create(
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create(username="user1")
+        cls.post1 = Post.objects.create(
             title="Post1",
             text="This is Post 1",
             status=Post.STATUS_CHOICES[0][0],
-            author=self.user
+            author=cls.user
         )
-        self.post2 = Post.objects.create(
+        cls.post2 = Post.objects.create(
             title="Post2",
             text="This is Post 2",
             status=Post.STATUS_CHOICES[1][0],
-            author=self.user
+            author=cls.user
         )
 
     def test_post_by_urls(self):
